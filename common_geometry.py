@@ -78,4 +78,30 @@ def TiltedPlane(length,width,beta, appearance=None):
     shape = x3d.Shape(geometry = ifs)
     if appearance is not None:
         shape.appearance = appearance
-    return x3d.Transform( children=[shape])   
+    return shape
+  
+def Cone(vertex_height, total_height, half_angle, appearance = None):
+    """ returns a cone of of specified geometry and location
+    
+    Args:
+    vertex_height : the distance of the vertex above (on y axis) the origin
+    total_height  : the total height of the cone
+    half_angle    : the opening angle of the cone in radians, pi/2 >= half_angle >= 0
+    appearance: (optional) Must be an x3d.Appearance instance
+        If not supplied, no Appearance node will appear in the x3d Shape
+        instances, and X3D specified defaults will be applied by browsers 
+        
+    Returns:
+    An x3d.Transform node containing a single Shape
+    """
+    
+    geometry = x3d.Cone( bottomRadius= total_height*math.tan(half_angle)  , height= total_height  )
+    shape = x3d.Shape(geometry = geometry)
+    if appearance is not None:
+        shape.appearance = appearance    
+    
+    retVal = x3d.Transform(
+        translation = (0.0, vertex_height - total_height/2, 0.0),
+        children = [shape]
+    )
+    return retVal
