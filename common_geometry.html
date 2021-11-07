@@ -21,15 +21,29 @@ an&nbsp;X3D&nbsp;Appearance&nbsp;node&nbsp;to&nbsp;apply&nbsp;to&nbsp;the&nbsp;g
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="x3d.x3d.html">x3d.x3d</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="x3d.x3d.html">x3d.x3d</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-Sphere"><strong>Sphere</strong></a>(center, radius, appearance=None)</dt><dd><tt>returns&nbsp;a&nbsp;sphere&nbsp;with&nbsp;specified&nbsp;radius&nbsp;and&nbsp;center<br>
+<td width="100%"><dl><dt><a name="-Cone"><strong>Cone</strong></a>(vertex_height, total_height, half_angle, appearance=None)</dt><dd><tt>returns&nbsp;a&nbsp;cone&nbsp;of&nbsp;of&nbsp;specified&nbsp;geometry&nbsp;and&nbsp;location<br>
+&nbsp;<br>
+Args:<br>
+vertex_height&nbsp;:&nbsp;the&nbsp;distance&nbsp;of&nbsp;the&nbsp;vertex&nbsp;above&nbsp;(on&nbsp;y&nbsp;axis)&nbsp;the&nbsp;origin<br>
+total_height&nbsp;&nbsp;:&nbsp;the&nbsp;total&nbsp;height&nbsp;of&nbsp;the&nbsp;cone<br>
+half_angle&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;the&nbsp;opening&nbsp;angle&nbsp;of&nbsp;the&nbsp;cone&nbsp;in&nbsp;radians,&nbsp;pi/2&nbsp;&gt;=&nbsp;half_angle&nbsp;&gt;=&nbsp;0<br>
+appearance:&nbsp;(optional)&nbsp;Must&nbsp;be&nbsp;an&nbsp;x3d.Appearance&nbsp;instance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;not&nbsp;supplied,&nbsp;no&nbsp;Appearance&nbsp;node&nbsp;will&nbsp;appear&nbsp;in&nbsp;the&nbsp;x3d&nbsp;Shape<br>
+&nbsp;&nbsp;&nbsp;&nbsp;instances,&nbsp;and&nbsp;X3D&nbsp;specified&nbsp;defaults&nbsp;will&nbsp;be&nbsp;applied&nbsp;by&nbsp;browsers&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+An&nbsp;x3d.Transform&nbsp;node&nbsp;containing&nbsp;a&nbsp;single&nbsp;Shape</tt></dd></dl>
+ <dl><dt><a name="-Sphere"><strong>Sphere</strong></a>(center, radius, appearance=None)</dt><dd><tt>returns&nbsp;a&nbsp;sphere&nbsp;with&nbsp;specified&nbsp;radius&nbsp;and&nbsp;center<br>
 &nbsp;<br>
 Args:<br>
 center:&nbsp;a&nbsp;(3,)&nbsp;sequence&nbsp;of&nbsp;(x,y,z)&nbsp;coordinates&nbsp;of&nbsp;sphere&nbsp;center<br>
@@ -40,6 +54,18 @@ appearance:&nbsp;(optional)&nbsp;Must&nbsp;be&nbsp;an&nbsp;x3d.Appearance&nbsp;i
 &nbsp;&nbsp;&nbsp;&nbsp;instances,&nbsp;and&nbsp;X3D&nbsp;specified&nbsp;defaults&nbsp;will&nbsp;be&nbsp;applied&nbsp;by&nbsp;browsers<br>
 &nbsp;&nbsp;&nbsp;<br>
 Returns:<br>
-An&nbsp;instance&nbsp;from&nbsp;x3d&nbsp;package&nbsp;representing&nbsp;an&nbsp;X3D&nbsp;node.</tt></dd></dl>
+An&nbsp;x3d.Transform&nbsp;node&nbsp;containing&nbsp;a&nbsp;single&nbsp;x3d.Shape&nbsp;node</tt></dd></dl>
+ <dl><dt><a name="-TiltedPlane"><strong>TiltedPlane</strong></a>(length, width, beta, appearance=None)</dt><dd><tt>returns&nbsp;a&nbsp;rectangle&nbsp;of&nbsp;specified&nbsp;length&nbsp;and&nbsp;width,&nbsp;centered&nbsp;on&nbsp;cone&nbsp;axis,&nbsp;making&nbsp;angle&nbsp;beta&nbsp;with&nbsp;horizontal<br>
+&nbsp;<br>
+Args:<br>
+length&nbsp;:&nbsp;length&nbsp;of&nbsp;rectanle&nbsp;in&nbsp;x&nbsp;axis<br>
+width&nbsp;&nbsp;:&nbsp;width&nbsp;of&nbsp;rectangle&nbsp;in&nbsp;z&nbsp;axis<br>
+beta&nbsp;&nbsp;&nbsp;:&nbsp;angle&nbsp;the&nbsp;plane&nbsp;makes&nbsp;with&nbsp;horizontal&nbsp;(x-z&nbsp;plane)<br>
+appearance:&nbsp;(optional)&nbsp;Must&nbsp;be&nbsp;an&nbsp;x3d.Appearance&nbsp;instance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;not&nbsp;supplied,&nbsp;no&nbsp;Appearance&nbsp;node&nbsp;will&nbsp;appear&nbsp;in&nbsp;the&nbsp;x3d&nbsp;Shape<br>
+&nbsp;&nbsp;&nbsp;&nbsp;instances,&nbsp;and&nbsp;X3D&nbsp;specified&nbsp;defaults&nbsp;will&nbsp;be&nbsp;applied&nbsp;by&nbsp;browsers&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+An&nbsp;x3d.Shape&nbsp;node</tt></dd></dl>
 </td></tr></table>
 </body></html>
