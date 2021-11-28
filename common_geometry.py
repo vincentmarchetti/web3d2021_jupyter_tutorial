@@ -105,3 +105,23 @@ def Cone(vertex_height, total_height, half_angle, appearance = None):
         children = [shape]
     )
     return retVal
+    
+def Circle(center , radius, normal = None, appearance = None):
+    """
+    center: center coordinates as (3,) sequence
+    radius: radius
+    normal: perpendicular to plane of circle, default is y axis
+    """
+    if normal is not None:
+        raise Exception("Not implemnted")
+    innerShape = x3d.Shape( geometry = x3d.Circle2D(radius = radius))
+    if appearance is not None:
+        innerShape.appearance = appearance
+    xzCircle = x3d.Transform(
+        rotation = (1.0,0.0,0.0, math.pi/2),
+        children = [innerShape]
+    )
+    return x3d.Transform(
+        translation = tuple(center),
+        children = [ xzCircle ]
+    )
